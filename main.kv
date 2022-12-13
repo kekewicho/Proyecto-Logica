@@ -1,0 +1,56 @@
+MDBoxLayout:
+    MDBoxLayout:
+        orientation:'vertical'
+        padding:15
+        size_hint_x:.7
+        TextInput:
+            size_hint:1,.15
+            background_color:0,0,0,.1
+            multiline:False
+            halign:'center'
+            font_size:sp(20)
+            valign:'center'
+            readonly:True
+            disabled:True
+            id:operation
+        MDBoxLayout:
+            spacing:20
+            size_hint_y:.2
+            MDFloatLayout:
+            MDFillRoundFlatButton:
+                text:'A'
+                on_release:operation.text=operation.text+' '+self.text
+            MDFillRoundFlatButton:
+                text:'B'
+                on_release:operation.text=operation.text+' '+self.text
+            MDFillRoundFlatButton:
+                text:'C'
+                on_release:operation.text=operation.text+' '+self.text
+            MDFloatLayout:
+        MDBoxLayout:
+            spacing:20
+            size_hint_y:.2
+            MDFloatLayout:
+            MDFillRoundFlatButton:
+                radius:0
+                text:'+'
+                on_release:operation.text=operation.text+' '+self.text
+            MDFillRoundFlatButton:
+                text:'-'
+                on_release:operation.text=operation.text+' '+self.text
+            MDFillRoundFlatButton:
+                text:'U'
+                on_release:operation.text=operation.text+' '+self.text
+            MDFloatLayout:
+        MDBoxLayout:
+            spacing:40
+            size_hint_y:.2
+            MDFloatLayout:
+            MDIconButton:
+                icon:'delete'
+            MDIconButton:
+                icon:'backspace'
+            MDIconButton:
+                icon:'calculator-variant'
+            MDFloatLayout:
+    MDFloatLayout:
