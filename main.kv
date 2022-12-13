@@ -1,3 +1,8 @@
+<Boton@MDIconButton>:
+    theme_icon_color: "Custom"
+    icon_color: 1,1,1,1
+    md_bg_color:'#252440'
+
 MDBoxLayout:
     MDBoxLayout:
         orientation:'vertical'
@@ -17,40 +22,56 @@ MDBoxLayout:
             spacing:20
             size_hint_y:.2
             MDFloatLayout:
-            MDFillRoundFlatButton:
+            Boton:
                 text:'A'
+                icon:'alpha-a'
                 on_release:operation.text=operation.text+' '+self.text
-            MDFillRoundFlatButton:
+            Boton:
                 text:'B'
+                icon:'alpha-b'
                 on_release:operation.text=operation.text+' '+self.text
-            MDFillRoundFlatButton:
+            Boton:
                 text:'C'
+                icon:'alpha-c'
                 on_release:operation.text=operation.text+' '+self.text
             MDFloatLayout:
         MDBoxLayout:
             spacing:20
             size_hint_y:.2
             MDFloatLayout:
-            MDFillRoundFlatButton:
-                radius:0
-                text:'+'
+            Boton:
+                text:'u'
+                icon:'set-all'
                 on_release:operation.text=operation.text+' '+self.text
-            MDFillRoundFlatButton:
+            Boton:
+                text:'n'
+                icon:'set-center'
+                on_release:operation.text=operation.text+' '+self.text
+            Boton:
                 text:'-'
-                on_release:operation.text=operation.text+' '+self.text
-            MDFillRoundFlatButton:
-                text:'U'
+                icon:'minus'
                 on_release:operation.text=operation.text+' '+self.text
             MDFloatLayout:
         MDBoxLayout:
-            spacing:40
+            spacing:20
             size_hint_y:.2
             MDFloatLayout:
             MDIconButton:
                 icon:'delete'
-            MDIconButton:
+                md_bg_color:122/255, 0, 0, 1
+                theme_icon_color: "Custom"
+                icon_color: 1,1,1,1
+                on_release:operation.text=''
+            Boton:
                 icon:'backspace'
-            MDIconButton:
+                md_bg_color:232/255, 166/255, 0, 1
+            Boton:
                 icon:'calculator-variant'
+                md_bg_color:0, 159/255, 0, 1
             MDFloatLayout:
     MDFloatLayout:
+        MDCard:
+            size_hint:.9,.9
+            pos_hint:{'right':.95,'center_y':.5}
+            elevation:2
+            md_bg_color:225/255, 227/255, 225/255, 1
