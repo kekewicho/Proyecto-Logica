@@ -60,16 +60,16 @@ MDBoxLayout:
             spacing:20
             size_hint_y:.2
             MDFloatLayout:
-            MDIconButton:
+            Boton:
+                text:'Δ'
+                icon:'triangle'
+                on_release:operation.text=operation.text+' '+self.text
+            Boton:
                 icon:'delete'
                 md_bg_color:122/255, 0, 0, 1
                 theme_icon_color: "Custom"
                 icon_color: 1,1,1,1
                 on_release:operation.text=''
-            Boton:
-                icon:'backspace'
-                md_bg_color:232/255, 166/255, 0, 1
-                on_release:app.backspace()
             Boton:
                 icon:'calculator-variant'
                 md_bg_color:0, 159/255, 0, 1
@@ -81,3 +81,16 @@ MDBoxLayout:
             pos_hint:{'right':.95,'center_y':.5}
             elevation:2
             md_bg_color:225/255, 227/255, 225/255, 1
+            MDBoxLayout:
+                padding:10
+                spacing:10
+                orientation:'vertical'
+                MDLabel:
+                    text:'Resultado:'
+                    halign:'center'
+                    size_hint_y:.05
+                    theme_text_color: "Custom"
+                    text_color: 0,0,0,.5
+                    font_size:sp(20)
+                FitImage:
+                    id:resultado

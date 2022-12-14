@@ -4,7 +4,6 @@ from matplotlib_venn import venn3,venn2
 
 def _2sets(operation):
     operation=operation.split(' ')
-
     sets={}
     sets['A']={'100','110'}
     sets['B']={'110','010'}
@@ -30,7 +29,7 @@ def _2sets(operation):
     for i in ('10','11','01'):
         diagrama.get_patch_by_id(i).set_edgecolor("black")
     
-    plt.show()
+    plt.savefig('graph.png')
     return result
 
 def _3sets(operation):
@@ -41,7 +40,9 @@ def _3sets(operation):
     _1op=str(operation[0]+' '+operation[1]+' '+operation[2])
 
     res_1op=_2sets(_1op)
-    print(res_1op)
+    if '100' in res_1op:res_1op.add('101')
+    if '110' in res_1op:res_1op.add('111')
+    if '010' in res_1op:res_1op.add('011')
 
     if operation[3]=='-':
         result=set(res_1op)-set(set3)
@@ -62,7 +63,4 @@ def _3sets(operation):
         diagrama.get_patch_by_id(i).set_edgecolor("black")
     
 
-    plt.show()
-
-
-_3sets(input('operation: '))
+    plt.savefig('graph.png')
