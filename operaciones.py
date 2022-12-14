@@ -40,6 +40,7 @@ def _3sets(operation):
     _1op=str(operation[0]+' '+operation[1]+' '+operation[2])
 
     res_1op=_2sets(_1op)
+    plt.clf()
     if '100' in res_1op:res_1op.add('101')
     if '110' in res_1op:res_1op.add('111')
     if '010' in res_1op:res_1op.add('011')
@@ -62,5 +63,4 @@ def _3sets(operation):
     for i in ('100','110','010','001','101','111','011'):
         diagrama.get_patch_by_id(i).set_edgecolor("black")
     
-
     plt.savefig('graph.png')
