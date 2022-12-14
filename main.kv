@@ -8,16 +8,20 @@ MDBoxLayout:
         orientation:'vertical'
         padding:15
         size_hint_x:.7
-        TextInput:
+        MDCard:
+            elevation:2
             size_hint:1,.15
-            background_color:0,0,0,.1
-            multiline:False
-            halign:'center'
-            font_size:sp(20)
-            valign:'center'
-            readonly:True
-            disabled:True
-            id:operation
+            md_bg_color:225/255, 227/255, 225/255, 1
+            TextInput:
+                size_hint:1,1
+                background_color:0,0,0,0
+                multiline:False
+                halign:'center'
+                font_size:sp(20)
+                valign:'center'
+                readonly:True
+                disabled:True
+                id:operation
         MDBoxLayout:
             spacing:20
             size_hint_y:.2
@@ -65,9 +69,11 @@ MDBoxLayout:
             Boton:
                 icon:'backspace'
                 md_bg_color:232/255, 166/255, 0, 1
+                on_release:app.backspace()
             Boton:
                 icon:'calculator-variant'
                 md_bg_color:0, 159/255, 0, 1
+                on_release:app.calculate()
             MDFloatLayout:
     MDFloatLayout:
         MDCard:
