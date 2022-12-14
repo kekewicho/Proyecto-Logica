@@ -30,19 +30,18 @@ def _2sets(operation):
     for i in ('10','11','01'):
         diagrama.get_patch_by_id(i).set_edgecolor("black")
     
+    plt.show()
     return result
 
 def _3sets(operation):
     operation=operation.split(' ')
 
-    sets={}
-    sets['C']={'111','011','001','101'}
+    set3=['111','011','001','101']
 
-    set3=list(sets.get(str(operation[4])))
-
-    _1op=str(operation[0]+' '+operation[1]+' '+operation[3])
+    _1op=str(operation[0]+' '+operation[1]+' '+operation[2])
 
     res_1op=_2sets(_1op)
+    print(res_1op)
 
     if operation[3]=='-':
         result=set(res_1op)-set(set3)
