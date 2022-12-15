@@ -1,9 +1,8 @@
 from matplotlib import pyplot as plt
-import numpy as np
 from matplotlib_venn import venn3,venn2
-from kivy.cache import Cache
 
 def _2sets(operation):
+    txt=operation
     plt.clf()
     operation=operation.split(' ')
     sets={}
@@ -34,13 +33,11 @@ def _2sets(operation):
     for i in ('10','11','01'):
         diagrama.get_patch_by_id(i).set_edgecolor("black")
     
-    Cache.remove("kv.image", 'graph.png' + "|False|0")
-    Cache.remove("kv.texture", 'graph.png' + "|False|0")
-    plt.savefig('graph.png')
+    plt.savefig('img/'+txt.replace(' ','')+'.png')
     return result
 
 def _3sets(operation):
-    global i
+    txt=operation
     operation=operation.split(' ')
 
     set3=['111','011','001','101']
@@ -74,5 +71,4 @@ def _3sets(operation):
     for i in ('100','110','010','001','101','111','011'):
         diagrama.get_patch_by_id(i).set_edgecolor("black")
     
-    Cache.remove('kv.image')
-    plt.savefig('graph.png')
+    plt.savefig('img/'+txt.replace(' ','')+'.png')
